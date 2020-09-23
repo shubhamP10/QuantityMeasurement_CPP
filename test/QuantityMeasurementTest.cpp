@@ -116,10 +116,45 @@ TEST(YardTests, given1YardAnd3Feet_ShouldReturnTrue) {
     ASSERT_TRUE(result);
 }
 
-//3
+//3.1
 TEST(CentimeterTest, given2InchAnd5cm_ShouldReturnTrue) {
     Length cm(5, Unit::CENTIMETER), inch(2, Unit::INCH);
     bool result = inch.compare(cm);
+    ASSERT_TRUE(result);
+}
+
+//3.2
+TEST(CentimeterTest, given2InchAnd2cm_ShouldReturnFalse) {
+    Length cm(2, Unit::CENTIMETER), inch(2, Unit::INCH);
+    bool result = inch.compare(cm);
+    ASSERT_FALSE(result);
+}
+
+//3.3
+TEST(CentimeterTest, given2FeetAnd5cm_ShouldReturnTrue) {
+    Length cm(5, Unit::CENTIMETER), feet(2, Unit::FEET);
+    bool result = feet.compare(cm);
+    ASSERT_FALSE(result);
+}
+
+//3.4
+TEST(CentimeterTest, given2FeetAnd60cm_ShouldReturnTrue) {
+    Length cm(60, Unit::CENTIMETER), feet(2, Unit::FEET);
+    bool result = feet.compare(cm);
+    ASSERT_TRUE(result);
+}
+
+//3.5
+TEST(CentimeterTest, given1YardAnd60cm_ShouldReturnTrue) {
+    Length cm(60, Unit::CENTIMETER), yard(1, Unit::YARD);
+    bool result = yard.compare(cm);
+    ASSERT_FALSE(result);
+}
+
+//3.6
+TEST(CentimeterTest, given1YardAnd90cm_ShouldReturnTrue) {
+    Length cm(90, Unit::CENTIMETER), yard(1, Unit::YARD);
+    bool result = yard.compare(cm);
     ASSERT_TRUE(result);
 }
 
