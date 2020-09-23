@@ -1,5 +1,5 @@
 #pragma once
 
 enum UnitType {
-    LENGTH
+    LENGTH, VOLUME
 };
