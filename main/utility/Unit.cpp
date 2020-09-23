@@ -16,6 +16,12 @@ const Unit Unit::LITRE(1, VOLUME);
 
 const Unit Unit::MILLILITRE(0.001, VOLUME);
 
+const Unit Unit::KG(1, WEIGHT);
+
+const Unit Unit::GRAM(0.001, WEIGHT);
+
+const Unit Unit::TONNE(1000, WEIGHT);
+
 bool Unit::operator==(Unit other) const {
     return (this == &other);
 }

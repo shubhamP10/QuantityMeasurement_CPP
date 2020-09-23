@@ -221,6 +221,27 @@ TEST(AdditionTests, given1LitreAnd1000mlToAdd_ShouldReturnSum) {
     ASSERT_EQ(sum, 2);
 }
 
+//7.1
+TEST(WeightTests, given1KgAnd1000Grams_ShouldReturnTrue) {
+    QuantityMeasurement kg(1, Unit::KG), gram(1000, Unit::GRAM);
+    bool result = kg.compare(gram);
+    ASSERT_TRUE(result);
+}
+
+//7.2
+TEST(WeightTests, given1TonneAnd1000Kg_ShouldReturnTrue) {
+    QuantityMeasurement kg(1000, Unit::KG), tonne(1, Unit::TONNE);
+    bool result = tonne.compare(kg);
+    ASSERT_TRUE(result);
+}
+
+//7.3
+TEST(AdditionTests, given1TonneAnd1000Grams_ShouldReturn1001Kg) {
+    QuantityMeasurement tonne(1, Unit::TONNE), gram(1000, Unit::GRAM);
+    double sum = tonne.addValues(gram);
+    ASSERT_EQ(sum, 1001);
+}
+
 int main(int argc, char **argv) {
     testing::InitGoogleTest(&argc, argv);
     return RUN_ALL_TESTS();

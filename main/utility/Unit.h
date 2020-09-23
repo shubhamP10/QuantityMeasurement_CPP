@@ -23,4 +23,9 @@ public:
     static const Unit GALLON;
     static const Unit LITRE;
     static const Unit MILLILITRE;
+
+    //Weight Units
+    static const Unit KG;
+    static const Unit GRAM;
+    static const Unit TONNE;
 };
