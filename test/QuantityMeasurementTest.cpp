@@ -207,6 +207,20 @@ TEST(VolumeTests, given1000mlAndEquavalentLitre_ShouldReturnTrue) {
     ASSERT_TRUE(result);
 }
 
+//6.1
+TEST(AdditionTests, given1GallonAndEquavalentLitreToAdd_ShouldReturnSum) {
+    QuantityMeasurement gallon(1, Unit::GALLON), litre(3.78, Unit::LITRE);
+    double sum = litre.addValues(gallon);
+    ASSERT_EQ(sum, 7.56);
+}
+
+//6.2
+TEST(AdditionTests, given1LitreAnd1000mlToAdd_ShouldReturnSum) {
+    QuantityMeasurement litre(1, Unit::LITRE), ml(1000, Unit::MILLILITRE);
+    double sum = litre.addValues(ml);
+    ASSERT_EQ(sum, 2);
+}
+
 int main(int argc, char **argv) {
     testing::InitGoogleTest(&argc, argv);
     return RUN_ALL_TESTS();
