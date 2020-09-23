@@ -95,6 +95,13 @@ TEST(YardTests, given1InchAnd1Yard_ShouldReturnFalse) {
     ASSERT_FALSE(result);
 }
 
+//2.4
+TEST(YardTests, given36InchAnd1Yard_ShouldReturnTrue) {
+    Length inch(36, Unit::INCH), yard(1, Unit::YARD);
+    bool result = yard.compare(inch);
+    ASSERT_TRUE(result);
+}
+
 int main(int argc, char **argv) {
     testing::InitGoogleTest(&argc, argv);
     return RUN_ALL_TESTS();
