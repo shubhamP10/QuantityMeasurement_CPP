@@ -165,6 +165,27 @@ TEST(AdditionTests, given2inchAnd2inch_ShouldReturn4Inch) {
     ASSERT_EQ(sum, 4.0);
 }
 
+//4.2
+TEST(AdditionTests, given1FeetAnd2inch_ShouldReturn14Inch) {
+    Length feet(1, Unit::FEET), inch(2, Unit::INCH);
+    double sum = feet.addValues(inch);
+    ASSERT_EQ(sum, 14.0);
+}
+
+//4.3
+TEST(AdditionTests, given1FeetAnd1Feet_ShouldReturn24Inch) {
+    Length feet1(1, Unit::FEET), feet2(1, Unit::FEET);
+    double sum = feet1.addValues(feet2);
+    ASSERT_EQ(sum, 24.0);
+}
+
+//4.4
+TEST(AdditionTests, given2InchAnd2Point5cm_ShouldReturn3Inch) {
+    Length inch(2, Unit::INCH), cm(2.5, Unit::CENTIMETER);
+    double sum = inch.addValues(cm);
+    ASSERT_EQ(sum, 3.0);
+}
+
 int main(int argc, char **argv) {
     testing::InitGoogleTest(&argc, argv);
     return RUN_ALL_TESTS();
