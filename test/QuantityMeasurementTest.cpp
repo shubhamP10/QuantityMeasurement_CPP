@@ -242,6 +242,13 @@ TEST(AdditionTests, given1TonneAnd1000Grams_ShouldReturn1001Kg) {
     ASSERT_EQ(sum, 1001);
 }
 
+//8
+TEST(TemperatureTest, given100CelsiusAnd212Fh_ShouldReturnTrue) {
+    QuantityMeasurement celsius(100, Unit::CELSIUS), fh(212, Unit::FAHRENHIET);
+    double result = celsius.compare(fh);
+    ASSERT_TRUE(result);
+}
+
 int main(int argc, char **argv) {
     testing::InitGoogleTest(&argc, argv);
     return RUN_ALL_TESTS();

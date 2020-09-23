@@ -28,4 +28,8 @@ public:
     static const Unit KG;
     static const Unit GRAM;
     static const Unit TONNE;
+
+    //Temperature Units
+    static const Unit CELSIUS;
+    static const Unit FAHRENHIET;
 };

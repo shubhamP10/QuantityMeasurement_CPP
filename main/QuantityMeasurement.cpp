@@ -24,6 +24,12 @@ bool QuantityMeasurement::operator == (QuantityMeasurement other) const {
 bool QuantityMeasurement::compare(QuantityMeasurement other) {
     if((this->unit == (other.unit)))
         return(this == &other);
+
+    if(other.unitType == TEMPERATURE) {
+        other.value = (other.value - 32) * 5/9; 
+        return (round(this->value * this->unit.conversionFactor) == round(other.value));
+    }
+
     return (round(this->value * this->unit.conversionFactor) == round(other.value * other.unit.conversionFactor));
 }
 
