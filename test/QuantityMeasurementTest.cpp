@@ -158,6 +158,13 @@ TEST(CentimeterTest, given1YardAnd90cm_ShouldReturnTrue) {
     ASSERT_TRUE(result);
 }
 
+//4.1
+TEST(AdditionTests, given2inchAnd2inch_ShouldReturn4Inch) {
+    Length inch1(2, Unit::INCH), inch2(2, Unit::INCH);
+    double sum = inch1.addValues(inch2);
+    ASSERT_EQ(sum, 4.0);
+}
+
 int main(int argc, char **argv) {
     testing::InitGoogleTest(&argc, argv);
     return RUN_ALL_TESTS();
