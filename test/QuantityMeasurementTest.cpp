@@ -96,9 +96,16 @@ TEST(YardTests, given1InchAnd1Yard_ShouldReturnFalse) {
 }
 
 //2.4
-TEST(YardTests, given36InchAnd1Yard_ShouldReturnTrue) {
+TEST(YardTests, given1YardAnd36Inch_ShouldReturnTrue) {
     Length inch(36, Unit::INCH), yard(1, Unit::YARD);
     bool result = yard.compare(inch);
+    ASSERT_TRUE(result);
+}
+
+//2.5
+TEST(YardTests, given36InchAnd1Yard_ShouldReturnTrue) {
+    Length inch(36, Unit::INCH), yard(1, Unit::YARD);
+    bool result = inch.compare(yard);
     ASSERT_TRUE(result);
 }
 
