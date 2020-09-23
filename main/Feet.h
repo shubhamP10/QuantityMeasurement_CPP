@@ -8,6 +8,6 @@ class Feet {
 public:
     Feet(double value);
    
-    // bool operator == (Feet*) const;
     bool operator == (Feet) const;
+    bool operator != (Feet*) const;
 };

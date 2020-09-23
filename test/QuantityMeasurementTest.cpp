@@ -7,6 +7,12 @@ TEST(FeetTests, given0FeetAnd0Feet_ShouldReturnEqual) {
     ASSERT_EQ(first_zero_feet, second_zero_feet);
 }
 
+//1.2
+TEST(FeetTests, givenNullAnd1Feet_ShouldNotEqual) { 
+    Feet first_zero_feet(1);
+    ASSERT_NE(first_zero_feet, nullptr);
+}
+
 int main(int argc, char **argv) {
     testing::InitGoogleTest(&argc, argv);
     return RUN_ALL_TESTS();

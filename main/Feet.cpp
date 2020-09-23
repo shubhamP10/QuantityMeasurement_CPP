@@ -7,3 +7,7 @@ Feet::Feet(double value) {
 bool Feet::operator == (Feet other) const {
     return (this->value == other.value); //value check
 }
+
+bool Feet::operator != (Feet* other) const {
+    return !(this == other);
+}
