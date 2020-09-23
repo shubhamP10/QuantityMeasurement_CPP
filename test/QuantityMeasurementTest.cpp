@@ -116,6 +116,13 @@ TEST(YardTests, given1YardAnd3Feet_ShouldReturnTrue) {
     ASSERT_TRUE(result);
 }
 
+//3
+TEST(CentimeterTest, given2InchAnd5cm_ShouldReturnTrue) {
+    Length cm(5, Unit::CENTIMETER), inch(2, Unit::INCH);
+    bool result = inch.compare(cm);
+    ASSERT_TRUE(result);
+}
+
 int main(int argc, char **argv) {
     testing::InitGoogleTest(&argc, argv);
     return RUN_ALL_TESTS();
