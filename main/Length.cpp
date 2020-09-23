@@ -18,3 +18,10 @@ bool Length::operator == (Length other) const {
 
     return (this->value == other.value); //value check
 }
+
+bool Length::compare(Length other) {
+    if((this->unit == (other.unit)))
+        return(this == &other);
+        
+    return (this->value * this->unit.conversionFactor == other.value * other.unit.conversionFactor);
+}

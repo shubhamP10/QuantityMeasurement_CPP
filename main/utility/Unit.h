@@ -1,7 +1,9 @@
 #include "../enums/UnitType.h"
 
-class Unit
-{
+class Unit {
+private:
+    Unit(double conversionFactor, UnitType type);
+
 public:
     double conversionFactor;
 
@@ -9,10 +11,8 @@ public:
 
     Unit() {}
 
-private:
-    Unit(double conversionFactor, UnitType type);
+    bool operator== (Unit) const;
 
-public:
     static const Unit INCH;
     static const Unit FEET;
 };
