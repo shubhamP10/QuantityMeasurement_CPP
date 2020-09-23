@@ -1,10 +1,8 @@
-#include "Feet.h"
+#include "Length.h"
 
-Feet::Feet(double value) {
-    this->value = value;
-}
+Length::Length(double value, Unit unit) : value(value), unit(unit), unitType(unit.type) {}
 
-bool Feet::operator == (Feet *other) const {
+bool Length::operator == (Length *other) const {
     if(other == nullptr || this == nullptr) { //null check
         return false;
     }
@@ -16,7 +14,7 @@ bool Feet::operator == (Feet *other) const {
     return (this->value == other->value); //value check
 }
 
-bool Feet::operator == (Feet other) const {
+bool Length::operator == (Length other) const {
 
     return (this->value == other.value); //value check
 }
